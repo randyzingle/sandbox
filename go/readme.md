@@ -89,3 +89,17 @@ go 1.15
 
 replace github.com/randyzingle/sandbox/go/greetings => ../greetings
 ```
+
+Run it:
+```
+razing hello $ go run hello.go
+Hi there Mymir, welcome to Baldursoft inc.
+razing hello $ cat go.mod
+module hello
+
+go 1.15
+
+replace github.com/randyzingle/sandbox/go/greetings => ../greetings
+
+require github.com/randyzingle/sandbox/go/greetings v0.0.0-00010101000000-000000000000 // indirect
+```
