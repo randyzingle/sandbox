@@ -1,8 +1,9 @@
 package main
 
 import "fmt"
-import "rsc.io/quote"
+import "github.com/randyzingle/sandbox/go/greetings"
 
 func main() {
-  fmt.Println(quote.Go())
+  message := greetings.Hello("Mymir")
+  fmt.Println(message)
 }

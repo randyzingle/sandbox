@@ -45,3 +45,16 @@ go 1.15
 
 require rsc.io/quote v1.5.2 // indirect
 ```
+
+I'll be pushing my code to: https://github.com/randyzingle/sandbox/go
+
+## Multi-module Build
+
+Greetings Module:
+
+```sh
+razing go $ mkdir greetings
+razing go $ cd greetings
+razing greetings $ go mod init github.com/randyzingle/sandbox/go/greetings
+go: creating new go.mod: module github.com/randyzingle/sandbox/go/greetings
+```
