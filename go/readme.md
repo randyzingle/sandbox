@@ -58,3 +58,34 @@ razing go $ cd greetings
 razing greetings $ go mod init github.com/randyzingle/sandbox/go/greetings
 go: creating new go.mod: module github.com/randyzingle/sandbox/go/greetings
 ```
+
+Hello Module Update:
+
+```sh
+razing hello $ cat hello.go
+package main
+
+import "fmt"
+import "github.com/randyzingle/sandbox/go/greetings"
+
+func main() {
+  message := greetings.Hello("Mymir")
+  fmt.Println(message)
+}
+$ go build hello.go
+go: finding module for package github.com/randyzingle/sandbox/go/greetings
+go: downloading github.com/randyzingle/sandbox v0.0.0-20200908201250-78df0726affc
+hello.go:4:8: module github.com/randyzingle/sandbox@latest found (v0.0.0-20200908201250-78df0726affc), but does not contain package github.com/randyzingle/sandbox/go/greetings
+```
+
+We haven't pushed our greetings module to github yet. We could either reference it locally for now  or push our code to github and run as is.
+
+Use local version:
+```sh
+razing hello $ cat go.mod
+module hello
+
+go 1.15
+
+replace github.com/randyzingle/sandbox/go/greetings => ../greetings
+```
