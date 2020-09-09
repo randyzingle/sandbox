@@ -101,5 +101,27 @@ go 1.15
 
 replace github.com/randyzingle/sandbox/go/greetings => ../greetings
 
-require github.com/randyzingle/sandbox/go/greetings v0.0.0-00010101000000-000000000000 // indirect
+```
+Try import from github (comment out the replace line in hello's go.mod):
+
+```sh
+razing hello $ cat hello.go
+package main
+
+import "fmt"
+import "github.com/randyzingle/sandbox/go/greetings"
+
+func main() {
+  message := greetings.Hello("Mymir")
+  fmt.Println(message)
+}
+razing hello $ go build hello.go
+razing hello $ cat go.mod
+module hello
+
+go 1.15
+
+//replace github.com/randyzingle/sandbox/go/greetings => ../greetings
+
+require github.com/randyzingle/sandbox/go/greetings v0.0.0-20200908204325-1356ee44d913 // indirect
 ```

@@ -1,3 +1,3 @@
-module github.com/randyzingle/sandbox/tree/latest/go/greetings
+module github.com/randyzingle/sandbox/go/greetings
 
 go 1.15
